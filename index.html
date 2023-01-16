@@ -1,0 +1,1161 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Report - Week 1</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c08da188-e81d-4aa4-b49c-b9b843f60b9e" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🏰</span></div><h1 class="page-title">Report - Week 1</h1></header><div class="page-body"><p id="4a8661e3-8663-4641-a538-62415d133daa" class="">
+</p><p id="21dbebdf-404f-4a19-9b3b-1b6f859d6c25" class="">Yêu cầu đầu vào: </p><ul id="03ce7e2e-ea42-4f53-a564-118ece6c21cf" class="bulleted-list"><li style="list-style-type:disc">Tìm hiểu 3 phần đầu của Modern JavaScript (<a href="https://javascript.info/">https://javascript.info/</a>)</li></ul><p id="e33cd34e-02a8-4ce7-8ef7-a2dc76618b1f" class="">Yêu cầu đầu ra:</p><ul id="4f81a74b-6916-4cb2-89be-25503ada16b9" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Viết report</span></li></ul><ul id="0879b5db-f07f-4405-beee-748b187e88c0" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Cài đặt Visual Code</span></li></ul><ul id="913aa362-d7c4-4c75-a99a-f3530ea0f963" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Comment các câu lệnh lúc học</span></li></ul><p id="2cce4049-acfa-4edb-a5fc-e954da2d7641" class="">
+</p><h1 id="0e12a4f1-a083-404b-ba28-9083a5387582" class=""><mark class="highlight-red">1.</mark> <mark class="highlight-red"><strong>An introduction</strong></mark></h1><hr id="eaa0ea39-05e1-4ea6-8835-5390994422a4"/><p id="11723b73-0c8b-4a2a-b71f-aaf1dbf7cfbd" class="">Nếu HTML là xương sống của web pages thì JavaScript tạo ra chuyển động, và Js được chạy đơn giản bằng văn bản thuần túy, trên bất kỳ thiết bị có <mark class="highlight-blue">JavaScript engine</mark></p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="5ce7bc12-1c1c-4f0f-9b36-b0665058d236"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><mark class="highlight-blue">JavaScript engine l</mark>à một phần của trình duyệt hoặc một ứng dụng riêng được thiết kế để thực thi các câu lệnh JavaScript</div></figure><p id="513b6a6e-3a4f-4ab6-9415-057351f558c2" class="">
+</p><p id="0eb90a85-a819-41d6-8ad8-40b87cc0c1c9" class="">JavaScript trong trình duyệt có thể thực hiện mọi thứ liên quan đến thao tác trang web, tương tác với người dùng và webserver:</p><ul id="a7910165-cafe-4a67-968d-ecfd95bfec06" class="bulleted-list"><li style="list-style-type:disc">Thêm HTML mới vào trang, thay đổi nội dung hiện có, sửa đổi kiểu.</li></ul><ul id="8aa8d7cb-9a32-48c2-9ee2-b3ed7edd477b" class="bulleted-list"><li style="list-style-type:disc">Tương tác với hành động của người dùng, chạy khi nhấp chuột, di chuyển con trỏ, nhấn phím.</li></ul><ul id="73959465-eec0-48fb-b843-f330f1022f45" class="bulleted-list"><li style="list-style-type:disc">Gửi yêu cầu qua mạng đến các máy chủ từ xa, download và upload tệp</li></ul><ul id="4212ea73-1a37-418e-81c5-a0a70ad6cf99" class="bulleted-list"><li style="list-style-type:disc">Nhận và đặt <mark class="highlight-blue">cookie</mark>, đặt câu hỏi cho khách truy cập, hiển thị tin nhắn.</li></ul><ul id="ddbe865b-24d9-4403-a410-5fa45430061f" class="bulleted-list"><li style="list-style-type:disc">Ghi nhớ dữ liệu ở phía máy khách (“bộ nhớ cục bộ”).</li></ul><blockquote id="559fbbf4-f837-45b0-bd01-7add88dbc1dc" class="">Cookie là một tập tin nhỏ được lưu trữ trên máy tính của người dùng bởi một trang web. Nó có thể được sử dụng để nhắc nhở người dùng về những thứ đã thực hiện trên trang web, như đăng nhập hoặc các mục đã xem. </blockquote><p id="a3947e33-0eba-42a9-ab29-7e5dc52f2eb6" class="">
+</p><p id="5a5bdb8e-fdae-4eb4-a220-5181b2c98c68" class="">Khả năng của JavaScript bị giới hạn để bảo vệ thông tin dữ liệu của người dùng:</p><ul id="185ac6fe-632f-4ff2-b43c-d9a0158dc5e3" class="bulleted-list"><li style="list-style-type:disc">Không đọc/ghi tệp tin nào vào hard disk, sao chép và chạy chương trình.</li></ul><ul id="66ff153a-e0bd-4f07-8fc2-dd254fb23fcf" class="bulleted-list"><li style="list-style-type:disc">Các tab khác nhau thường không biết về nhau. Chỉ biết trong trường hợp cả hai đồng ý trao đổi dữ liệu và chứa Js code đặc biệt</li></ul><ul id="40e54092-e420-47fc-88a1-afc0592a348a" class="bulleted-list"><li style="list-style-type:disc">JavaScript có thể dễ dàng giao tiếp qua mạng với máy chủ nơi xuất phát của trang hiện tại. Nhưng khả năng nhận dữ liệu từ các trang web/tên miền khác bị tê liệt</li></ul><figure id="dfe31019-7f50-4f20-91f5-abfc80977999" class="image"><a href="Untitled.png"><img style="width:570px" src="Untitled.png"/></a></figure><p id="272a4a4f-f408-4fee-bd86-a19cf0c67c3f" class="">
+</p><p id="11a66eb4-5f47-4b85-afd2-177df9ea06a9" class="">Dựa trên nhiều mục đích sử dụng khác nhau của mỗi người, <mark class="highlight-blue">Transpiled languages </mark>được tạo ra<mark class="highlight-blue"> </mark></p><p id="0cec3880-5728-4a6b-bbf4-7f9dfd8ca0a1" class=""><mark class="highlight-blue">Transpiled languages</mark> là những ngôn ngữ lập trình chuyển đổi từ mã nguồn nguyên thủy sang mã nguồn đích khác. Chúng thường được dùng để tối ưu hóa hiệu suất hoặc thay đổi ngôn ngữ lập trình, ví dụ như chuyển đổi từ mã nguồn TypeScript sang mã nguồn JavaScript. Chuyển đổi này được thực hiện bởi một trình dịch viên, một chương trình máy tính hoặc các công cụ trực tuyến.</p><p id="c7dd8f08-6a83-41d3-885a-dd90a833a868" class="">
+</p><h2 id="6678bbbe-75ea-4012-b4cf-0da456f69cba" class="">1.1 <mark class="highlight-red"><strong><strong>Manuals and specifications</strong></strong></mark></h2><hr id="be4398c4-2c3c-4c0d-b9c0-50b85c8604d5"/><p id="8478ea1d-8424-4189-bf92-aeae0e014cce" class=""><a href="https://www.ecma-international.org/publications/standards/Ecma-262.htm">The ECMA-262 specification</a> chứa thông tin chuyên sâu, chi tiết về Js. </p><figure id="126e49dc-d337-4d29-a475-be3ec5d87a7f"><div class="source">https://github.com/tc39/proposals</div></figure><p id="bed0c341-a3be-45c4-84a2-51877ff21b30" class="">
+</p><p id="0780c118-4f1a-4faa-a04c-4ce3718cafba" class=""><mark class="highlight-blue">MDN (Mozilla) JavaScript Reference: </mark>tài liệu tham khảo với nhiều ví dụ.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="d5e404f4-8962-45b4-b1ae-7d762d40c105"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Sử dụng Google Search để tra cứu: dùng:”MDN [term]”.
+e.g <strong><a href="https://google.com/search?q=MDN+parseInt">https://google.com/search?q=MDN+parseInt</a></strong></div></figure><p id="b1ab1cb8-d18c-41c6-a7c4-83b3dfc711c7" class="">
+</p><ul id="db26f032-a76f-4439-82ab-98bd070894a1" class="bulleted-list"><li style="list-style-type:disc"><a href="https://caniuse.com/">https://caniuse.com</a> – bảng hỗ trợ theo tính năng, e.g. to see which engines support modern cryptography functions: <a href="https://caniuse.com/#feat=cryptography">https://caniuse.com/#feat=cryptography</a>.</li></ul><ul id="8c7d23b9-fca0-414f-b695-eff58c84cb94" class="bulleted-list"><li style="list-style-type:disc"><a href="https://kangax.github.io/compat-table">https://kangax.github.io/compat-table</a> – một bảng có các tính năng và công cụ ngôn ngữ hỗ trợ hoặc không hỗ trợ.</li></ul><p id="6d4e0395-2d66-42e7-9707-99bccacef073" class="">
+</p><p id="8e5cf544-157a-4f4d-b0fc-e37da0100cfd" class="">
+</p><h2 id="16459478-3d5c-4ce2-8f74-456991e92213" class="">1.2 <mark class="highlight-red">Code Editors</mark></h2><hr id="bd179d72-0954-4461-a72e-af833d418913"/><p id="0a412094-91c0-480d-afa7-2c9add56e7fe" class="">2 loại code editors chính: IDEs and lightweight editors.</p><h3 id="f4e69458-3bc6-449d-b7ed-431832cbc87d" class=""><mark class="highlight-red">IDE</mark></h3><p id="94a623c2-5089-4739-83c6-c19b2e0f6709" class="">IDE là trình biên dịch với nhiều tính năng và thường để xử lý nguyên project, full-scale “development environment”</p><h3 id="6732fd06-cbf0-43c2-841f-0174fc3b24c7" class=""><mark class="highlight-red">Lightweight editors</mark></h3><p id="537d3d7f-14ae-48d7-b94f-9c41f1a1d8de" class="">Không toàn diện như IDE, nhưng đáp ứng độ nhanh, đơn giản; phù hợp để xử lý 1 file lẻ nhanh gọn</p><p id="a3174b5e-80c5-41eb-bb07-0c2f8807efa0" class=""><div class="indented"><p id="2e563754-639a-4af8-a3ba-cb2f1a8b5728" class="">→ Mảng frontend phù hợp lựa chọn <mark class="highlight-blue">Visual Studio Code</mark></p><p id="e36b48c4-e04d-4e06-bb2d-a9a63654c9f5" class="">
+</p></div></p><h2 id="9005a40f-86dc-4b71-96ec-18be49edc424" class="">1.3 <mark class="highlight-red"><strong><strong>Developer console</strong></strong></mark></h2><hr id="1caf276d-f4b2-4a77-8ee0-04fbff764730"/><p id="ea537a17-3ab2-4d40-8d77-962cf3453e2e" class="">Các trình duyệt hiện nay đều nhúng “developer tools”. Chúng có nhiều tính năng để giúp người dùng tìm được lỗi và có được nhiều thông tin hữu ích từ đoạn scripts.</p><p id="d71435f2-ead1-4808-b007-7f22d26a1a36" class="">Mở “Developer tools” bằng cách <code>F12</code> hoặc <code>CTRL+U</code> với Windows</p><p id="556d504c-5e02-4bcc-9ea7-b04d45c859fc" class=""> </p><figure id="85d4764b-108f-46b1-adc4-a92ecc6c078f" class="image"><a href="Untitled%201.png"><img style="width:707px" src="Untitled%201.png"/></a></figure><p id="5ee9c931-2812-41a7-84fb-1b44ca957faf" class="">                               <em><em><em><em>Nguồn: </em></em></em></em><a href="https://javascript.info/article/devtools/chrome.png">https://javascript.info/article/devtools/chrome.png</a></p><ul id="3c6fbc97-1445-4d2d-a088-d21ec061705b" class="bulleted-list"><li style="list-style-type:disc">Dòng màu đỏ → lỗi </li></ul><ul id="ce19c6a3-6284-40a2-9620-3c9996932011" class="bulleted-list"><li style="list-style-type:disc">Cuối dòng bên phải <mark class="highlight-gray"><code>bug.html:12</code></mark> , link dẫn đến nơi xảy ra lỗi</li></ul><ul id="a6bb7c3d-c82e-4be3-821c-fe6d9c978b4c" class="bulleted-list"><li style="list-style-type:disc">Dấu <mark class="highlight-blue"><code>&gt;</code></mark> đánh dấu “command line”; nơi người dùng có thể gõ lệnh Js và chạy.<ul id="cba8df95-dea3-4553-b2a8-bfb2ffd48455" class="bulleted-list"><li style="list-style-type:circle"><code>Enter</code> để chạy code</li></ul><ul id="74d2f1d7-1b1a-409d-a889-a072fa509d2e" class="bulleted-list"><li style="list-style-type:circle"><code>Shift + Enter</code> để xuống dòng, nếu muốn nhiều câu lệnh</li></ul></li></ul><p id="2d89b8cf-4bcc-4a1c-a2e6-fc86631a0b75" class="">
+</p><h1 id="c63fa6ec-aa88-4133-a10f-80dc05449ac1" class=""><mark class="highlight-red">2.</mark> <mark class="highlight-red"><strong><strong>JavaScript Fundamentals</strong></strong></mark></h1><hr id="0bb08434-4449-4910-ba34-a19bf4bcd712"/><h2 id="c9015dbf-9d55-4e8c-aba2-aeda85a21c0b" class="">2.1 <mark class="highlight-red"><strong>Hello, world!</strong></mark></h2><p id="68fcaf3c-e86a-4d70-81dd-9583bd8f9f30" class="">Code Js trong HTML, sử dụng tag <code><mark class="highlight-gray">&lt;script&gt;</mark></code><mark class="highlight-gray">; </mark> khi trình duyệt xử lý tags → code chạy</p><p id="98468e20-8c01-4364-990e-cf8a5c9edb09" class="">
+</p><p id="09ddd337-c0d1-4ddb-a2f4-fddef7faf93f" class="">Thuộc tính <code>type</code> : yêu cầu phải có trong tiêu chuẩn cũ, hiện tại không cần; hiện nay được sử dụng cho JavaScript modules.</p><pre id="8e952eb2-250e-44da-8ad1-9d1a276e5cb0" class="code"><code>&lt;script type=&quot;text/javascript&quot;&gt;
+	...
+&lt;/script&gt;</code></pre><p id="477e9d38-8420-435d-ab8e-2cda4359e49b" class="">
+</p><p id="39ada40c-0966-41c3-bfef-0a4b633b2e4e" class="">Nếu có nhiều Js code, chúng ta nên chia nhỏ ra theo từng file và đính kèm sau với thuộc tính <code>src</code></p><p id="4948700c-4d6c-470a-a272-d3f95c791742" class=""> </p><pre id="156a11c9-ca9e-4cd0-92a3-14bb726b9850" class="code"><code>&lt;script src=&quot;D:\Hai\buoi2\index.js&quot;&gt;&lt;/scripts&gt;</code></pre><p id="8dccbe1c-7849-4cbb-aa62-8897bbe5e048" class="">
+</p><p id="dd543d16-8fd1-4169-b59a-c427eb54fbb6" class="">Với <code>src=” “</code> thì:</p><ul id="88249d4c-6ec3-45ea-b3f0-49fdcabe5373" class="bulleted-list"><li style="list-style-type:disc"><code>src=“D:\Hai\buoi2\index.html”</code> - địa chỉ cụ thể dẫn tới file</li></ul><ul id="5005647e-0a4c-41ad-b5e5-b707e17b3350" class="bulleted-list"><li style="list-style-type:disc"><code>src=“./buoi2/index.html”</code> - địa chỉ rút ngắn khi cùng thư mục gốc</li></ul><ul id="407b5ff9-9b8f-414a-94a5-c189769f4fe5" class="bulleted-list"><li style="list-style-type:disc"><code>src=”index.hmtl”</code> hoặc <code>src=”./index.html”</code> - khi cùng thuộc thư mục hiện tại</li></ul><p id="9388d00f-0dee-4e94-bdd9-6fcc17094f5c" class="">Đính kèm bao nhiêu file thì sử dụng bấy nhiêu <code>src</code></p><p id="179c587f-2fb7-42b5-a378-61940b74f9ae" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0cb4c8eb-0c0f-41e8-99d2-0a2fa2967bc4"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Chỉ những tệp đơn giản cho thẳng vào HTML, phức tạp chia tệp riêng</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="264924b6-aba2-499f-9a5d-4f62b6160dda"><div style="font-size:1.5em"><span class="icon">⚠️</span></div><div style="width:100%">Nếu đã set <code>src</code> , nội dung trong tag <code>&lt;script&gt;</code> bị bỏ qua</div></figure><p id="3a2a792b-210e-49e5-8665-509d5e8dc086" class="">
+</p><h2 id="dd4b4c97-3912-4db6-93f3-cd6babff27c6" class=""><mark class="highlight-red">Tasks</mark></h2><h3 id="d0b702cf-48ca-4471-beeb-8b1e74dfa81f" class="">Show an alert</h3><p id="c7003931-1a10-47f3-ba69-5153e75ea34e" class="">Create a page that shows a message “I’m JavaScript!”.</p><pre id="03578cca-33b0-4e1e-869b-3dd5cafbbb83" class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;
+        Before the script...
+    &lt;/p&gt;
+
+    &lt;script&gt;
+        alert(&quot;I&#x27;m JavaScript!&quot;); //tạo box message mang nội dung &quot;I&#x27;m JavaScript!&quot;
+    &lt;/script&gt;
+
+    &lt;p&gt; ... After the script&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><figure id="86d8a41e-1bac-4bf4-8a54-4086f2643cb4" class="image"><a href="Untitled%202.png"><img style="width:931px" src="Untitled%202.png"/></a></figure><p id="a0876cda-d947-4b8a-911c-859e81909a27" class="">
+</p><h3 id="a051fbe7-6bac-4ff4-b66e-1107f67e141a" class=""><strong>Show an alert with an external script</strong></h3><p id="11881614-6573-49c5-aeb9-811c4bb98226" class="">Take the solution of the previous task Show an alert. Modify it by extracting the script content into an external file <code>alert.js</code>, residing in the same folder.</p><pre id="872d3c0d-7b2b-45b3-860f-be89e1ad4342" class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script src=&quot;./external_file.js&quot;&gt;&lt;/script&gt;; 
+		// sử dụng ./filename do 2 file nằm cùng thư mục
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p id="1216f826-415f-4650-af5f-18df5a03a7e8" class="">Code external script file:</p><pre id="c860e0c4-f6f7-48a1-a477-a666dbfbb246" class="code"><code>alert(&quot;I&#x27;m JavaScript!&quot;); //tạo box message mang nội dung &quot;I&#x27;m JavaScript!&quot;</code></pre><p id="c22de0cc-6a50-4427-8976-57f3cfae9de0" class="">Chạy file chính:</p><figure id="eca33666-0b0c-426c-9c97-c3d553c0e450" class="image"><a href="Untitled%203.png"><img style="width:925px" src="Untitled%203.png"/></a></figure><h2 id="292963c4-b2c6-4419-b60f-592a71d0029f" class="">2.2 <mark class="highlight-red"><strong><strong>Code structure</strong></strong></mark></h2><hr id="689c0b3e-3efa-4d33-9669-01f42d7e85b9"/><h3 id="61fff8a6-e919-4fc6-b5e4-872bee3a8ce7" class=""><mark class="highlight-red">Statements &amp; Semicolons</mark></h3><p id="9a87f552-2c7a-453d-842f-00e94c614f1a" class="">Các câu lệnh là các cấu trúc cú pháp và các lệnh thực hiện các hành động. Chúng phân cách nhau bằng <code>;</code></p><p id="669b48ba-38d6-4279-97c9-0fe708557c51" class="">Dấu chấm phẩy có thể được bỏ qua trong hầu hết các trường hợp khi có ngắt dòng.</p><p id="b3454a8e-86ef-47df-a3b6-1496651af281" class="">Ngắt dòng ↔ Dấu chấm phẩy “ngầm” hay <strong><mark class="highlight-blue"><a href="https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion">automatic semicolon insertion</a></mark></strong></p><pre id="6cc11d4b-d529-494f-b8c5-5d5b13b6227f" class="code"><code>alert(&#x27;Hello&#x27;)
+alert(&#x27;World&#x27;)</code></pre><p id="f434997c-5d5f-44ee-865b-d2994501a00f" class="">Trường hợp câu lệnh chưa hoàn thành → ngắt dòng ≠ <code>;</code></p><pre id="503be9cc-a1ab-4ac5-9e91-77448c770619" class="code"><code>alert(3 +
+1
++ 2);</code></pre><p id="f932ae4c-69b0-476a-8792-74672e213b94" class="">
+</p><p id="fd69f6b5-639e-4ea3-9788-2f4b019123c5" class="">Đôi lúc JavaScript fail trong việc đặt dấu chấm phẩy “ngầm”:</p><p id="8587e5f8-8223-4de5-bc5a-e0493cfb0993" class="">Example.</p><pre id="ea79e9f8-55c0-452b-be51-ebfa7b3c7571" class="code"><code>alert(&quot;Hello&quot;);
+
+[1,2].forEach(alert);</code></pre><p id="9f592527-4ab3-4818-b027-d03ee561060d" class="">→ Thông báo: Hello, 1, 2</p><pre id="23ad1821-895c-4a0b-9021-695629f02371" class="code"><code>alert(&quot;Hello&quot;)
+
+[1,2].forEach(alert);</code></pre><p id="6eb8ad1a-d4ce-4804-b90a-4f58933d2755" class="">→ Lỗi chỉ thông báo Hello: do JavaScript không đặt <code>;</code> ngầm trước dấu ngoặc vuông <code>[..]</code></p><p id="dfa014a3-6ac2-4376-ba72-ad446577a6f8" class="">⇒ Tốt nhất là nhớ đặt <code>;</code> ở cuối các câu lệnh.</p><p id="c1b565ec-2f46-4e58-901f-5ea99766887a" class="">
+</p><h3 id="8726be03-46e3-4f4b-b68d-1b8eceab59bc" class=""><mark class="highlight-red">Comments</mark></h3><ul id="da8f49a7-f492-494b-9c3b-3b7c6cb1b4dc" class="bulleted-list"><li style="list-style-type:disc">Comment 1 dòng → <code>//</code></li></ul><pre id="5acf74f3-20a4-41ad-b3f2-a4760ecbe3dc" class="code"><code>// comment 1 dòng</code></pre><ul id="7eb70fd9-13da-4e9f-9b80-f1faaa12d235" class="bulleted-list"><li style="list-style-type:disc">Comment nhiều dòng →<code>/*</code> … <code>*/</code></li></ul><pre id="5849ce2f-ca76-476d-8324-8af6c9b49e39" class="code"><code>/* comment
+nhiều 
+dòng*/</code></pre><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="e487a456-e3cb-43a9-a51c-99e880080d27"><div style="font-size:1.5em"><span class="icon">💾</span></div><div style="width:100%"><strong>Phím tắt:
+</strong><code>Ctrl+/</code> : comment nhanh 1 dòng có sẵn.
+<code>Ctrl+Shift+/</code> : comment nhanh nhiều dòng có sẵn.</div></figure><p id="2fa54ff0-cffb-417d-8f3c-96fc4c780844" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f3acdad6-1ea6-40ba-bf9b-141ef5cfc69d"><div style="font-size:1.5em"><span class="icon">⚠️</span></div><div style="width:100%">Comment lồng nhau không được hỗ trợ</div></figure><p id="e6c23194-fa69-4a94-85f7-925b7891dd96" class="">Example.</p><pre id="7e560faf-48cc-4c64-8fbc-478706993d2a" class="code"><code>/*
+  /* nested comment ?!? */
+*/
+alert( &#x27;World&#x27; );</code></pre><p id="832832a3-d89e-4160-86aa-50be0ed4f3dc" class="">
+</p><h2 id="13c9757f-84d1-4cd2-8457-2154767022f7" class="">2.3 <mark class="highlight-red"><strong><strong>The modern mode, &quot;</strong></strong></mark><mark class="highlight-blue"><strong><strong>use strict</strong></strong></mark><mark class="highlight-red"><strong><strong>&quot;</strong></strong></mark></h2><hr id="be83c770-409f-4ac7-8d12-5bee811dcb62"/><p id="c07a4ffa-1be6-4fc2-86b7-2155b2fe47ef" class="">
+</p><p id="384543f5-d5ff-4d96-82cc-4420f1ba8277" class=""><mark class="highlight-blue">“use strict”</mark> dùng để JavaScript quản lý nghiêm ngặt hơn về mặt cú pháp của các dòng code ở dưới phần khai báo <code>use strict</code></p><p id="2e791fe2-8f59-4d2b-99b0-00b5837422d0" class="">Có thể đặt <code>“use strict”</code> ở:</p><ul id="4f9c305b-bfc8-40d0-8ad5-57addb00e7dd" class="bulleted-list"><li style="list-style-type:disc">Đặt ở đầu file hay đầu code JavaScript có tác dụng cho toàn bộ code JavaScript trong file đó</li></ul><ul id="ad8a623c-094b-4405-bf34-2b16fde135b7" class="bulleted-list"><li style="list-style-type:disc">Đặt ở đầu một hàm có tác dụng cho code trong hàm đó mà thôi.</li></ul><p id="8a2118b5-ee1f-4b12-852d-0a0f73488361" class=""><span style="border-bottom:0.05em solid">Lưu ý</span>: Phải luôn đặt ở trên cùng; trong <mark class="highlight-blue">quá trình nghiêm ngặt</mark> → không có cách nào tắt được</p><p id="3a34045c-2cb5-47b5-8a84-d24287562789" class="">
+</p><h2 id="26b16560-0675-4b69-ac6b-8ddcded556e6" class="">2.4 <mark class="highlight-red"><strong><strong>Variables</strong></strong></mark></h2><p id="2758463b-03c2-41e3-9ccd-ede05c8701fa" class="">Biến trong JavaScript thường để lưu thông tin.</p><p id="59a5655f-abaf-4aee-ac92-43ef4654b796" class="">Tạo (Khai báo) một biến → <code>let</code></p><pre id="ff7292b2-2eb7-4717-8917-21de24e3a91c" class="code"><code>let Hello; //tạo 1 biến có tên &quot;Hello&quot;</code></pre><p id="27afa850-95f7-4bb7-b6b6-9d47239f437d" class="">Thêm dữ liệu vào biến bằng toán tử <code>=</code> </p><pre id="22a507c6-bda4-4467-bfd1-3407cdedc996" class="code"><code>let Hello; //tạo 1 biến có tên &quot;Hello&quot;
+
+Hello = &#x27;Xin Chao&#x27;; // lưu trữ chuỗi &#x27;Xin Chao&#x27; vào biến &#x27;Hai&#x27;</code></pre><p id="7772187a-c823-4d0c-8b9d-876836526230" class="">Truy xuất dữ liệu đó qua tên biến</p><pre id="577d466b-7691-406a-a08e-cf89ed0114a4" class="code"><code>let Hello;
+Hello = &#x27;Xin chao&#x27;;
+alert(Hello);// xuất nội dung biến chứa
+// box thông báo:&#x27;Xin chao&#x27;</code></pre><p id="0e9b1516-94f7-46d8-bb72-d408276dae45" class="">Thêm dữ liệu ngay khi khai báo</p><pre id="20e27880-7fa4-4537-ae00-0919d905ef1f" class="code"><code>let Hello = &#x27;Xin chao&#x27;;
+alert(Hello);//Xin chao</code></pre><p id="dc7e68a4-ea08-4aac-ac3b-2aa07d796876" class="">Khai báo nhiều biến trên cùng 1 dòng lệnh <code><mark class="highlight-red">let</mark></code><mark class="highlight-red"> , </mark>ngăn cách bởi dấu phẩy</p><pre id="1bbe5ab4-8598-446b-adc1-bf38af566f00" class="code"><code>let student=&#x27;Hai&#x27;, age=22, Hello=&#x27;Xin chao&#x27;;</code></pre><p id="cdf22b2a-fc54-49fa-97bd-140953e32287" class="">→ ngắn hơn nhưng không recommend </p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="cdfbfce1-c630-4687-a170-666def05f84a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">in older code, <code>var</code> = <code>let</code></div></figure><pre id="6f0e241c-8afb-4129-930e-4cfed52cd906" class="code"><code>var Hello=&#x27;Xin chao&#x27;;</code></pre><p id="2ada6569-c41b-4dcd-812a-ab393167a368" class="">Khi gán giá trị cho 1 biến, nó sẽ thay thế giá trị có sẵn của biến trước đó.</p><pre id="564429d2-40c2-4ed2-99f8-274d36e8f725" class="code"><code>let Hello;
+Hello = &#x27;Nihao&#x27;;
+Hello = &#x27;Xin Chao&#x27;; // giá trị biến thay đổi từ &#x27;Nihao&#x27; thành &#x27;Hello&#x27;
+alert(Hello);
+// Xin chao</code></pre><p id="9852b986-146e-4c2f-bcbb-7923d5e59193" class="">Khai báo 2 biến và copy dữ liệu của nhau</p><pre id="b244f722-840c-4428-b4de-74eab3db2045" class="code"><code>let Hello =&#x27;Xin chao&#x27;;
+let message;
+//Copy dữ liệu từ Hello sang message
+message = Hello;
+//2 biến lúc này có cùng dữ liệu
+alert(Hello); //Xin chao
+alert(message);//Xin chao</code></pre><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="fceedb81-0a01-4834-899e-46ffc76a476e"><div style="font-size:1.5em"><span class="icon">⚠️</span></div><div style="width:100%">Khai báo 2 lần 1 biến → lỗi</div></figure><p id="2dea264b-b523-4ecb-b8fb-6801407757c2" class="">
+</p><p id="2e26c44a-6ec0-41f1-a76c-1df360d9379f" class="">Quy tắc đặt tên biến trong JavaScript:</p><ul id="1d1cca0a-2903-4bce-bb34-5f9d9c1d7da8" class="bulleted-list"><li style="list-style-type:disc">chỉ chứa chữ, chữ số, kí tự <code>$</code> và <code>_</code></li></ul><ul id="4c0d56ae-9d8d-4228-b7bd-09fb7404028b" class="bulleted-list"><li style="list-style-type:disc">kí tự đầu tiên ≠ 1 chữ số</li></ul><pre id="6f3f33ca-27f9-433d-9f27-b8130df748e2" class="code"><code>let sinh_vien; //
+let SinhVien1; //camelCase</code></pre><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f6df43be-3640-4e83-b92f-1d273f158dd7"><div style="font-size:1.5em"><span class="icon">⚠️</span></div><div style="width:100%">có phân biệt kí tự in hoa in thường. <code>hai</code> ≠ <code>HAI</code></div></figure><p id="b225abbc-45e4-4330-b01f-4fd27e75c542" class="">Không đặt tên trùng với từ riêng (<mark class="highlight-blue">Reserved names</mark>) của JavaScript; <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords">list of reserved words</a></p><p id="1fa2f7b3-f9c4-4138-b9f8-817a3bfdcd07" class="">
+</p><p id="29ee1499-379b-4764-b374-a741381c5783" class=""><mark class="highlight-red">Constant - unchanging varibles </mark>→ use <code>const</code></p><pre id="2f28bbf3-4580-4a3f-8ed4-fb454524449f" class="code"><code>const myBirthday = &#x27;19.01.2001&#x27;;
+myBirthday = &#x27;20.01.2001&#x27;; //Báo lỗi vì không thể thay đổi giá trị hằng biến</code></pre><p id="88a694fe-0b03-4def-8b44-8ca1ec5b93eb" class="">Hằng số còn làm bí danh cho các giá trị khó ghi nhớ; đặt bằng chữ IN HOA, ngăn cách bằng <code>_</code> </p><pre id="b5691251-24db-46db-a28a-eeda70c71a97" class="code"><code>// Biến hằng cho các mã màu khó nhớ
+const COLOR_RED = &quot;#F00&quot;;
+const COLOR_GREEN = &quot;#0F0&quot;;
+const COLOR_BLUE = &quot;#00F&quot;;
+const COLOR_ORANGE = &quot;#FF7F00&quot;;
+
+// Khi dùng, gán theo tên biến
+let color = COLOR_ORANGE;
+alert(color); // #FF7F00</code></pre><pre id="772a50a9-b387-4bbf-833e-c6f773a755fb" class="code"><code>// Dùng cho giá trị mặc định - khó thay đổi
+const openTime =&#x27;5.0&#x27;;</code></pre><p id="fc10eb05-d640-4667-9601-d80bd49db0fa" class="">
+</p><h3 id="5e5e1f9e-347b-4535-9436-056479e675b6" class=""><mark class="highlight-red">Tasks</mark></h3><p id="ab9c88ee-7c3f-4945-a019-7e73efebd102" class="">Working with variables</p><pre id="24a49543-6a34-42e8-9553-dc2b3e391ae2" class="code"><code>let admin;
+        let name;
+        name = &#x27;John&#x27;;
+        admin = name;
+        alert(admin);</code></pre><p id="904bae60-b11f-425c-88b6-ac09da3630b3" class="">Giving the right name</p><pre id="830217a3-cbaf-418f-a8fd-0b29bc545045" class="code"><code>let ourPlanetName = &quot;Earth&quot;;
+let currentUserName = &quot;Hai&quot;;</code></pre><p id="f67d9b55-9106-4f12-9b90-a50b0fea0dc1" class="">Uppercase Const</p><pre id="44872de3-f475-4587-931b-d7d5f62f969a" class="code"><code>const BIRTHDAY = &#x27;18.04.1982&#x27;; // make birthday uppercase
+
+const age = someCode(BIRTHDAY); // don&#x27;t make age uppercase</code></pre><p id="81ab2cab-3e07-4bdd-95d6-8bf8b8205f54" class="">vì giá trị <code>BIRTHDAY</code> được biết trước khi chạy chương trình và được ghi trực tiếp vào code.</p><p id="dbd9dbbe-bf56-4c14-961e-104682df4394" class=""><code>age</code> thay đổi được khi chạy</p><p id="00b15632-19f3-4120-8af3-6b1324e19181" class="">
+</p><h2 id="11b69190-8dd6-4faa-9991-44ee21bdc9ad" class="">2.5 <mark class="highlight-red">Data types</mark></h2><p id="5356af7e-0e49-4142-a390-a1475a95f16c" class="">có 8 kiểu dữ liệu cơ bản trong JavaScript</p><p id="038612b2-7644-4664-9081-8113bf32979b" class="">biến trong JavaScript thường là “dynamically typed”</p><pre id="b7f5c8d6-cf11-4eca-9c6b-a43de0e076ba" class="code"><code>let Hello = &#x27;Xin chao&#x27;;
+Hello = 20192821;</code></pre><h3 id="4084f784-32ed-44a9-bd8d-b2f95b716e1c" class=""><mark class="highlight-red">Numbers</mark></h3><ul id="9de1c26b-9ec3-48c7-848b-8191aa61d58e" class="bulleted-list"><li style="list-style-type:disc">số nguyên, số thập phân</li></ul><ul id="9f63a87a-f3ad-4268-9521-f07d59116c33" class="bulleted-list"><li style="list-style-type:disc"><code>Infinity</code>, <code>-Infinity</code>, <code>NaN</code> (not a number)</li></ul><p id="d7fcd728-a4a2-41e5-be34-1803404df364" class="">
+</p><h3 id="baf9ecba-0b81-4df6-a9ac-0c90b9024b23" class="">String</h3><pre id="caeb22d8-5c4d-4207-bba7-d6da2147a5f8" class="code"><code>let str = &quot;Xin chao&quot;;
+let str1 = &#x27;Hello&#x27;;
+let str2 = `Nihao`;</code></pre><p id="8afddd64-998c-4986-83fd-30a3f7cb8f1e" class="">Thêm giá trị biến vào trong chuỗi → <code>${…}</code></p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="366689aa-9d60-44f3-b5b0-3b4f03f3005e"><div style="font-size:1.5em"><span class="icon">⚠️</span></div><div style="width:100%">chỉ thực hiện chèn được trong dấu <code>` `</code></div></figure><pre id="a8a65eb6-3f0d-45e7-a68d-bb7b2fb53436" class="code"><code>let Hello = &#x27;Xin chao&#x27;;
+//chen &#x27;Xin chao&#x27; vao chuoi
+alert(`${Hello} moi nguoi`); //Xin chao moi nguoi
+//cung co the chen 1 bieu thuc
+alert(`1 + 2 = ${1+2}`); // 1 + 2 = 3</code></pre><p id="3333ea9d-7031-4410-81a5-5b1b69c8913f" class="">
+</p><h3 id="94dde631-d1f9-470f-b587-11e997d2e1e7" class="">Boolean(logical type)</h3><p id="ac564856-b359-491d-b7b1-b6d52a299f6b" class="">mang hai giá trị <code>true</code> và <code>false</code></p><pre id="85bf14f6-db63-4729-8478-1ade7839ad76" class="code"><code>let varCheck = true; // đúng, công nhận lỗi check
+let nameCheck = false; // sai, không đúng tên</code></pre><p id="99bca228-e8c6-4999-a679-789017286097" class="">hai giá trị true false có thể biểu diễn bằng biểu thức</p><pre id="aefaac1a-63fd-43cb-8025-ad62186c6d17" class="code"><code>let isGreater = 5 &lt; 3;
+let mathCheck = isGreater;
+alert(mathCheck);// thông báo &quot;false&quot;</code></pre><p id="36386138-6a7f-4de9-806c-9b395d20e1bc" class="">
+</p><h3 id="ad38c619-6276-40d8-90da-f77d3ace28f4" class="">The “null” value</h3><pre id="6b34ff5c-5be7-44ed-b020-69df5ca69563" class="code"><code>let name = null;</code></pre><p id="3a7701cd-385d-4b9e-9c69-f601f59f9649" class="">null = “nothing” = “value unknown” = “empty”</p><p id="9bf985b8-be88-4be8-99e6-07bdaf876fac" class="">
+</p><h3 id="81e1b6d6-5ddd-4c92-bf60-578347f0c8c9" class="">The “undefined” value</h3><pre id="a03b601c-4c25-499c-b19b-11ac017a87c7" class="code"><code>let name;
+alert(name); //shows &quot;underfined&quot; - chưa xác định</code></pre><p id="8e9ec3d4-389f-40df-bcdf-c981043ebca3" class="">dùng <code>underfined</code> → làm 1 biến trở nên chưa xác định</p><pre id="3c41d4e1-a31c-4cfb-8fb9-544a406e9fb9" class="code"><code>let name=&#x27;Hai&#x27;;
+name = underfined; // dua 1 bien ve chua xac dinh
+alert(name);//shows &quot;underfined&quot; - chưa xác định</code></pre><p id="0a194cd2-ab24-4a67-b5de-70a1c1d738de" class="">
+</p><h3 id="023ed9eb-4d0b-4c24-8e07-cd3a81b2b779" class=""><mark class="highlight-red">Toán tử </mark><mark class="highlight-blue">typeof</mark></h3><p id="ea73c509-efe1-4bac-9b31-2bd5d1bd8962" class="">sử dụng <code>typeof</code> để trả về kiểu dữ liệu của biến</p><pre id="f8e33753-d1ff-496f-85a7-5335a145b13f" class="code"><code>typeof undefined // &quot;undefined&quot;
+
+typeof 0 // &quot;number&quot;
+
+typeof 10n // &quot;bigint&quot;
+
+typeof true // &quot;boolean&quot;
+
+typeof &quot;foo&quot; // &quot;string&quot;
+
+typeof Symbol(&quot;id&quot;) // &quot;symbol&quot;
+
+typeof Math // &quot;object&quot;  (1)
+
+typeof null // &quot;object&quot;  (2)
+
+typeof alert // &quot;function&quot;  (3)</code></pre><p id="3ac30f47-62f4-42e1-9ef6-e3d477491ade" class="">
+</p><h3 id="9a06d42b-2a98-42b8-a719-5c27fc3ebe71" class=""><mark class="highlight-red">Tasks</mark></h3><p id="aee12b28-900c-473b-8776-72862aa029e0" class="">String quotes</p><p id="6ca11bd4-0e55-451a-a25d-404fb38b6ae2" class="">What is the output of the script?</p><pre id="64cd1b37-a026-481e-b15f-966d54e43714" class="code"><code>let name = &quot;Ilya&quot;;
+
+alert( `hello ${1}` ); // ? 
+
+alert( `hello ${&quot;name&quot;}` ); // ?
+
+alert( `hello ${name}` ); // ?</code></pre><p id="e8ba64a0-6b8f-4c6f-864a-6fe45dc1a20c" class="">Answer:</p><pre id="af933c3b-0bed-4559-b5a0-4d5a5c26a5a9" class="code"><code>let name = &quot;Ilya&quot;;
+
+alert( `hello ${1}` ); // hello 1 
+
+alert( `hello ${&quot;name&quot;}` ); // hello name
+
+alert( `hello ${name}` ); // hello Ilya</code></pre><p id="187374a7-7def-4e8d-ab29-15d872ab9150" class="">
+</p><h2 id="0272c95f-043b-4165-a227-cbc439d48299" class="">2.6 <mark class="highlight-red">Cú pháp tương tác: alert, prompt, confirm</mark></h2><h3 id="606aa62d-728e-4d91-81e3-c2ce05d7d57d" class="">alert</h3><pre id="5f0b18a2-fc04-4c23-9808-d8033471cdf0" class="code"><code>alert(&quot;Hello&quot;);</code></pre><p id="fa4c061f-926a-4395-a386-8c11dd40ee3b" class="">Xuất hiện <mark class="highlight-blue"><em>modal window</em></mark> chứa nội dung và button OK. Tồn tại đến khi users click OK, trong thời gian đó users không thể tương tác bất cứ thứ gì khác trong web.</p><h3 id="544e3a2f-db10-4f26-b241-b17915bbb260" class="">prompt</h3><pre id="aa670654-9103-4ff7-9bd8-dd9472398a1b" class="code"><code>result = prompt(title, [default]);</code></pre><p id="2e52a436-fabd-4936-8883-7b5c542879ff" class=""><code>prompt</code> hiển thi hộp thoại thông báo khi muốn lấy thông tin (input) từ người dùng để thực hiện các hành động khác.</p><p id="111a210a-8601-49bf-afd3-13e6fdbeb1a1" class="">title để hiển thị thông báo/ yêu cầu</p><p id="cafb8c79-5075-4f3d-af44-d5ae24c12c61" class="">default: giá trị mặc định nằm trong ô điền; đặt nằm trong<code>[…]</code> → tùy thích, không bắt buộc</p><pre id="06612e96-74d4-48a8-bf5b-c0fa903cd371" class="code"><code>prompt(&quot;Mời bạn nhập tên của mình&quot;, &quot;Hai&quot;);</code></pre><p id="3cb3de3b-e5d7-47cd-a150-8814d576ef28" class="">Có thể trả về giá trị để gán cho biến; không có giá trị trả về → <code>null</code></p><pre id="5d10eeda-3c7d-4ce3-8a32-56f47850eebf" class="code"><code>let name = prompt(&quot;Mời bạn nhập tên của mình&quot;, &quot;Hai&quot;);
+alert(`Xin chao ${name}`);</code></pre><figure id="e234a2cf-0b2c-483b-8a7c-63fc435f6c87" class="image"><a href="Untitled%204.png"><img style="width:451px" src="Untitled%204.png"/></a></figure><figure id="c384ac37-979f-4e93-b94a-215b8b412c5b" class="image"><a href="Untitled%205.png"><img style="width:447px" src="Untitled%205.png"/></a></figure><figure id="c06f7331-6b6b-4fc2-90bf-956a44f65f5d" class="image"><a href="Untitled%206.png"><img style="width:455px" src="Untitled%206.png"/></a></figure><p id="adad0c7c-4eee-43ae-a902-63564bc11993" class="">
+</p><h3 id="ca66e8ce-183b-4aa4-895d-81b20b2c1ee8" class="">confirm</h3><pre id="8a0db7d3-566d-465f-9c6b-f6c24628383d" class="code"><code>result = confirm(question);</code></pre><p id="87a08011-3bd2-4181-b5fa-500e9a7eea92" class="">xuất hiện 1 modal window thông báo: câu hỏi, 2 button OK + Hủy</p><p id="1d0a213f-9049-4271-b965-405e0dae9498" class="">và như prompt, có thể gán giá trị <code>true</code> hoặc <code>false</code> trả về cho biến</p><pre id="b5a164da-c226-44b1-ab26-b5f5e3f63b1e" class="code"><code>let ageCheck = confirm(&quot;Bạn đủ 18 tuổi chưa?&quot;);
+alert(ageCheck);</code></pre><figure id="eacbaab2-3034-43ae-8d28-4e889a48867f" class="image"><a href="Untitled%207.png"><img style="width:454px" src="Untitled%207.png"/></a></figure><figure id="9b55dd37-43fa-486b-ac63-3c24f60e3196" class="image"><a href="Untitled%208.png"><img style="width:451px" src="Untitled%208.png"/></a></figure><p id="96182483-5afc-40f1-987c-575fcddb04f8" class="">
+</p><h3 id="30abc470-1683-41b4-aa52-b7521111b22d" class="">Tasks</h3><p id="813bce33-41a4-4e3f-a1f6-f515f85640bf" class="">Create a web-page that asks for a name and outputs it.</p><pre id="1babd003-e1d3-49ad-9ad5-a8dc3e386629" class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        let name = prompt(&quot;Mời bạn nhập tên của mình&quot;, &quot;Hai&quot;);
+        alert(`Xin chao ${name}`);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p id="8a67873a-175b-4eba-97d3-c8342e15ff14" class="">
+</p><h2 id="221cd3b5-aedc-4aa9-a1de-f925762f04fc" class="">2.7 Type Conversions - Ép kiểu</h2><h3 id="8c78234b-0fc0-466b-a2f8-99a31a1bdebe" class="">String Conversion</h3><p id="c81efa94-b211-43bd-952c-eda0efdc7eb4" class=""><code>string(value)</code></p><pre id="861bb058-7c0f-41cf-8e1c-f7f32ee92419" class="code"><code>let value = true;
+alert(typeof value); // boolean
+
+value = String(value); // //giá trị biến trở thành &quot;true&quot;
+alert(typeof value); // string</code></pre><p id="2e249ce5-7fcb-4c7d-abd7-3105e28845f9" class="">tương tự: <code>false</code> → <code>“false”</code> ; <code>null</code> → <code>“null”</code></p><p id="e0036697-432c-43f0-ac29-d9ac90d29a7e" class="">
+</p><h3 id="62ee9ffc-7d23-4b72-80e6-0367b403b171" class="">Numeric Conversion </h3><p id="0b78db06-2383-4dc4-b647-214ea41a98a8" class=""><code>number(value)</code></p><table id="38fb7387-e420-475c-9c4c-4b4837596a40" class="simple-table"><tbody><tr id="dda9d2f4-1dfc-4f03-a7e3-e6d0382d1201"><td id="wkct" class="" style="width:349px">Value</td><td id="d&gt;OM" class="" style="width:349px">Becomes…</td></tr><tr id="da97447c-fcd7-409d-8bc1-6aeacadfc6d5"><td id="wkct" class="" style="width:349px"><code>undefined</code></td><td id="d&gt;OM" class="" style="width:349px"><code>NaN</code></td></tr><tr id="2449ad69-900e-4641-920e-079c674b4fba"><td id="wkct" class="" style="width:349px"><code>null</code></td><td id="d&gt;OM" class="" style="width:349px"><code>0</code></td></tr><tr id="d562b035-044c-4d5b-ba4e-0711d2ce0e44"><td id="wkct" class="" style="width:349px"><code>true and false</code></td><td id="d&gt;OM" class="" style="width:349px"><code>1</code> and <code>0</code></td></tr><tr id="101bbd3f-e564-4d13-bb7e-d569dbb38488"><td id="wkct" class="" style="width:349px"><code>string</code></td><td id="d&gt;OM" class="" style="width:349px">Khoảng trắng (includes spaces, tabs <code>\t</code>, newlines <code>\n</code> etc.) bị loại bỏ. nếu là chuỗi rỗng → <code>0</code>. Còn lại → <code>NaN</code>.</td></tr></tbody></table><p id="e8d9c421-63ca-441c-8901-7a546981cc5a" class="">Examples:</p><pre id="6491bb0a-33f7-4478-ba43-105776c19098" class="code"><code>alert( Number(&quot;   123   &quot;) ); // 123
+alert( Number(&quot;123z&quot;) );      // NaN (error reading a number at &quot;z&quot;)
+alert( Number(true) );        // 1
+alert( Number(false) );       // 0</code></pre><p id="f7befff4-0527-4db1-ab17-1e9aa0061e5b" class="">
+</p><h2 id="b78c824a-2f3a-48cc-9404-ae8c58dac873" class=""><mark class="highlight-red">2.8 </mark><mark class="highlight-red"><strong><strong>Basic operators, maths</strong></strong></mark></h2><h3 id="3c0ff320-97d7-418b-ae3f-31882100d1cc" class="">Đ<strong>ơn nguyên, Nhị phân, Toán hạng</strong></h3><ul id="76735166-75c0-480c-a22d-8be4aefc5ee9" class="bulleted-list"><li style="list-style-type:disc"><em>Toán hạng</em>:</li></ul><pre id="7637fc66-f110-441a-8f95-a5c10adaf104" class="code"><code>5 * 2</code></pre><p id="4e25f621-7120-4012-9f75-aaddcd98339b" class="">→ 5 là toán hạng trái; 2 là toán hạng phải </p><ul id="f3fd6ef2-97b8-4f4b-ac01-ccafc05a45b7" class="bulleted-list"><li style="list-style-type:disc"><em>Đơn nguyên là phép toán chỉ gồm 1 toán hạng</em></li></ul><pre id="7ea908d3-07f2-4b5d-ae04-6f2b3ddc9814" class="code"><code>let x = 1;
+x = -x;
+alert(x);
+//giá trị trả về là -x với x là giá trị ban đầu</code></pre><ul id="fd578b6c-72b1-4f18-add5-79818b38c260" class="bulleted-list"><li style="list-style-type:disc">Một toán tử là <em>nhị phân</em> nếu nó có hai toán hạng</li></ul><pre id="100e1230-339a-4930-baa7-04b70c5de0ed" class="code"><code>let a = 1,b = 2;
+alert (a-b);</code></pre><p id="375db1ef-ca57-4dfc-9f50-6cecb76280b9" class="">
+</p><h3 id="09b7f7cd-e38a-4b16-9b31-6710c23f4cd7" class="">Maths</h3><ul id="c53baac2-330d-44d5-8325-dea639bd119f" class="bulleted-list"><li style="list-style-type:disc">Cộng <code>+</code>,</li></ul><ul id="f7eddb2e-27ff-47d4-8431-70b464c4a4be" class="bulleted-list"><li style="list-style-type:disc">Trừ <code>-</code> ,</li></ul><ul id="43ddbd3f-c65a-4ed4-bb33-8ba033fcaf2b" class="bulleted-list"><li style="list-style-type:disc">Nhân <code>*</code> ,</li></ul><ul id="70052780-4aca-4c14-86f9-69e853edfe8b" class="bulleted-list"><li style="list-style-type:disc">Chia  <code>/</code>,</li></ul><ul id="aa4a0fb3-5304-4070-90cf-e9db1b3bfabc" class="bulleted-list"><li style="list-style-type:disc">Lấy dư (mod) <code>%</code>,</li></ul><ul id="1a3bbb11-20ad-46d5-a18c-77d0d58bf28c" class="bulleted-list"><li style="list-style-type:disc">Mũ <code>**</code>.</li></ul><p id="1e6bdaa0-904a-43d3-b1c9-520fe359523c" class="">
+</p><h3 id="eb4966ba-5790-4e3c-b422-820eb42ac327" class="">Nối chuỗi với phép cộng nhị phân</h3><pre id="b6adbf89-4b77-41a7-8368-f1bcea9e6282" class="code"><code>let str1 = &quot;Nguyen&quot;;
+let str2 = &quot;Hai&quot;;
+let str3 = str1 + str2;
+alert(str3);
+// Kết quả được: &quot;NguyenHai&quot;</code></pre><p id="a3cf7038-a0c9-48e3-9637-d426a7b39dc3" class="">Nếu một trong 2 toán hạng không thuộc kiểu string → tự động ép kiểu về string</p><pre id="0f304490-db0c-44be-8df7-d93ca02b3927" class="code"><code>alert( &#x27;1&#x27; + 2 ); // &quot;12&quot;
+alert( 2 + &#x27;1&#x27; ); // &quot;21&quot;</code></pre><p id="29ae1e41-5c1f-492d-a056-525318b4887d" class="">Thứ tự thực hiện: từ trái sang phải</p><pre id="cd77e13f-625c-4ad3-b2e9-bb9e1049632a" class="code"><code>alert(2 + 2 + &#x27;1&#x27; ); // &quot;41&quot; and not &quot;221&quot;</code></pre><p id="6940a003-b734-4208-847c-8bc660a0911b" class="">
+</p><pre id="fcd8fe4e-046b-44af-a9fa-454f92da35b8" class="code"><code>alert(&#x27;1&#x27; + 2 + 2); // &quot;122&quot; and not &quot;14&quot;</code></pre><p id="b1e3bd5d-3413-4c76-98f2-982cc439aef1" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0fe7d4eb-e27d-499d-a27e-987998d8f1e3"><div style="font-size:1.5em"><span class="icon">💾</span></div><div style="width:100%">Điều này chỉ thực hiện được với toán tử <code>+</code></div></figure><pre id="845e7753-82f3-4d90-aa01-2f2b029eced8" class="code"><code>alert(6 -&#x27;2&#x27;); //4
+alert(&#x27;6&#x27; / &#x27;2&#x27;); //3</code></pre><p id="738c1625-1cd3-46bc-afe4-98187aa14554" class="">Trong các trường hợp này, Javascript tự động ép kiểu string về numeric</p><p id="acd5ad99-21b2-45a6-a640-97b8ed7c9f25" class="">
+</p><h3 id="0bf029f2-fa36-40f0-97f0-3975eb0a2517" class="">Ép kiểu về Numeric, đơn nguyên +</h3><p id="a0d93421-fa17-400a-9038-d5025762eec7" class="">xét the unary form, thêm toán tử <code>+</code> trước đơn nguyên</p><pre id="05e0f820-7222-41dd-863a-99beed9cd108" class="code"><code>				// Không có tác dụng với số
+        let x = 1;
+        alert( +x ); // 1
+
+        let y = -2;
+        alert( +y ); // -2
+
+        // Chuyển biến khác numeric
+        alert( +true ); // 1
+        alert( +&quot;&quot; );   // 0</code></pre><p id="eba76d01-1d7e-492d-8900-73e84013cb66" class="">
+</p><h3 id="38f0c8e3-2642-4731-b2a0-223a62592c02" class="">Thứ tự ưu tiên giữa các toán tử</h3><p id="949c3367-ec35-455d-a07e-0ce0118502f6" class=""><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">precedence table</a></p><p id="bfc70bed-355c-4465-9d8e-ebdae0fa5af7" class="">
+</p><h3 id="56edd635-3fa1-4ae7-8267-2a26416c9308" class="">Toán tử gán(assignment operator)</h3><pre id="b0d0dbd5-4df8-4c29-94fd-6e19560cb0cd" class="code"><code>variable = value;</code></pre><p id="0baab719-4ffc-49ba-9fa4-5e64d532706b" class="">Trong đó &quot;variable&quot; là tên của biến và &quot;value&quot; là giá trị muốn gán cho biến đó.</p><p id="9c762e07-e03f-49d6-93c0-c90f2aa5dd5a" class="">Gán vào chính nó</p><pre id="d5b965ce-cebb-4474-bfbd-9fc248b9007e" class="code"><code>let x = 5;
+x += 3; // x = 8
+x -= 2; // x =6
+x *= 4; // x = 24
+x /= 2; // x = 12
+x %= 3; // x = 0</code></pre><p id="596010dc-bedd-41c4-a135-775e72f4596f" class="">Dùng trong các biểu thức</p><pre id="2dbf9065-f1ee-4d1b-a2df-71e7e8de05b5" class="code"><code>let x = 5;
+let y = 2;
+let z = (x + y) * 2;</code></pre><p id="554277d9-ce97-4664-8513-e57fffea9fec" class="">
+</p><h3 id="9f9d2d0a-1aa6-4075-9f3a-baaced549e16" class=""><strong>Chaining assignments</strong></h3><p id="cb49615c-4815-4a6f-88be-bd9179b7d744" class="">kỹ thuật sử dụng nhiều toán tử gán liên tiếp trong một câu lệnh.</p><pre id="727820f8-342c-4829-8598-8e8728b3cefa" class="code"><code>let x = 5, y = 3, z = x + y;</code></pre><p id="39fe0310-a899-430e-b463-15d1acfe2188" class="">hay</p><pre id="50fc61d4-23cd-4b0f-8fbc-123965156d99" class="code"><code>let a, b, c;
+
+a = b = c = 2 + 2;</code></pre><p id="b79d3157-e8bf-4c56-8176-6f8cc848aba2" class="">
+</p><h3 id="d9954a61-56a5-4817-a058-73c70a14ff2f" class=""><strong>Modify-in-place</strong></h3><p id="d4469ed4-d60a-4c6d-8378-faee5b3f50cf" class="">cho phép bạn thay đổi giá trị của một đối tượng hoặc mảng mà không cần tạo một bản sao mới của nó.</p><p id="3e6bc197-5820-4d07-a75b-810edf90265a" class="">Thường dùng với toán tử <code>+=</code> , <code>*=</code> ,…</p><pre id="ae1a7609-e465-46e9-b11a-55472fd8baf3" class="code"><code>let n = 2;
+n += 5; // now n = 7 (same as n = n + 5)
+n *= 2; // now n = 14 (same as n = n * 2)
+
+alert( n ); // 14</code></pre><p id="0f2dbd6f-1434-4430-98f7-f3d653bd336b" class="">
+</p><h3 id="81c6fbd9-8155-48ba-9b3d-725f794adffd" class=""><strong>Increment/decrement</strong></h3><ul id="0b634b93-4e04-40e1-b32f-ebb6904300c9" class="bulleted-list"><li style="list-style-type:disc"><code>++</code> tăng giá trị thêm 1 đơn vị</li></ul><pre id="18c51a32-5f04-4681-a59a-8060a53ce7ea" class="code"><code>let a = 1;
+a++;
+alert(a); // a=2</code></pre><ul id="9c58bf37-103d-425b-be68-664bb95ce5bb" class="bulleted-list"><li style="list-style-type:disc"><code>--</code> giảm giá trị đi 1 đơn vị</li></ul><pre id="fd6993f0-2277-40d9-8ff8-49af9527d59f" class="code"><code>let a = 1;
+a--;
+alert(a); // a=0</code></pre><p id="39930aab-9f3f-4f9a-ba15-cbd2ee786895" class="">Sự khác biệt giữa ++value và value++ là chúng tương tác khác nhau với biến value khi sử dụng trong một câu lệnh.</p><ul id="41937231-f06b-4d3f-ab34-c2e99047992a" class="bulleted-list"><li style="list-style-type:disc"><code>++value</code> (toán tử tăng trước) sẽ tăng giá trị của biến value trước khi nó được sử dụng trong một câu lệnh.</li></ul><pre id="c5cdb6ab-299d-4a0f-8bfa-cc0a2457d3cd" class="code"><code>let x = 5;
+let y = ++x;
+alert(x); // x = 6
+alert(y); // y = 6</code></pre><ul id="d44736f5-3069-4564-9cb3-6bc54ab43625" class="bulleted-list"><li style="list-style-type:disc"><code>value++</code> (toán tử tăng sau) sẽ sử dụng giá trị của biến value trước khi nó được tăng.</li></ul><pre id="515e1a9e-cabc-45f0-b0bd-70e282608d9c" class="code"><code>let x = 5;
+let y = x++;
+alert(x); // x = 6
+alert(y); // y = 5</code></pre><p id="53406e83-29a2-4362-b15a-773132ed5297" class="">Theo thứ tự ưu tiên thì <code>++</code> &gt;<code>+</code>,<code>-</code>,<code>*</code>,<code>/</code></p><pre id="bf6aed50-9969-4788-8041-b96d87ef7922" class="code"><code>let x = 1;
+alert(2 * ++x); // 4
+alert(2 * x++); // 2</code></pre><h3 id="ee240306-142e-440e-8646-046429075a3a" class=""><strong>Bitwise operators</strong></h3><p id="806bc799-bc2e-48ce-9390-97dfe322b19c" class="">một loại toán tử dùng để thao tác trực tiếp với bit của một số.</p><ul id="648652b0-dda7-4155-961d-9f964f91a5f5" class="bulleted-list"><li style="list-style-type:disc">AND ( <code>&amp;</code> )</li></ul><ul id="c71687c1-acb5-4b0f-98a0-2ea5d5bde4e0" class="bulleted-list"><li style="list-style-type:disc">OR ( <code>|</code> )</li></ul><ul id="a2d2075e-eecb-4482-b98f-a2767be4325c" class="bulleted-list"><li style="list-style-type:disc">XOR ( <code>^</code> )</li></ul><ul id="3bfb0361-a91b-4d97-89a7-7483e7a2a369" class="bulleted-list"><li style="list-style-type:disc">NOT ( <code>~</code> )</li></ul><ul id="9e1e5b05-9c60-40b7-9869-f7ea4943fd2f" class="bulleted-list"><li style="list-style-type:disc">LEFT SHIFT ( <code>&lt;&lt;</code> )</li></ul><ul id="7841ef51-2559-4cc0-ad99-f97f5c19d156" class="bulleted-list"><li style="list-style-type:disc">RIGHT SHIFT ( <code>&gt;&gt;</code> )</li></ul><ul id="5e4ffc7d-a6ed-47ed-830e-71253876f1a5" class="bulleted-list"><li style="list-style-type:disc">ZERO-FILL RIGHT SHIFT ( <code>&gt;&gt;&gt;</code> )</li></ul><p id="55b5f213-f76a-4a42-9157-212c149699b9" class="">
+</p><h3 id="71e73ead-7c8d-428f-8005-b4b191fb9113" class=""><strong>Comma</strong></h3><p id="a5074b16-bbe6-4260-b7ad-b0fd9e5fd283" class="">một loại toán tử được sử dụng để phân tách các thành phần trong một câu lệnh hoặc biểu thức</p><pre id="e67dbd55-cb60-4996-96c7-3215bc4817ee" class="code"><code>let a = (1 + 2, 3 + 4);
+
+alert( a ); // 7 (the result of 3 + 4)</code></pre><p id="6268421a-b48a-4ece-9040-fecea06c4cc7" class="">Nhiều biểu thức thì khi gán chọn kết quả cuối cùng để trả về</p><pre id="635f4a7c-ea28-46d2-aaab-03f644c6fa62" class="code"><code>let x = 1, y = 2, z = 3;
+let arr = [1, 2, 3, 4, 5];
+x = 5; y = 10; // chay da dong lenh</code></pre><p id="8c011dfc-b713-4ec9-93d8-341354fffd77" class="">
+</p><h3 id="723c3672-e226-4e71-8d25-35d1c4cace3f" class="">Tasks</h3><p id="0b7d3e53-3598-4066-b752-b8530cb48c7a" class=""><strong>The postfix and prefix forms</strong></p><pre id="5d46a0d8-0854-48c3-8317-574d54c2bd24" class="code"><code>let a = 1, b = 1;
+
+let c = ++a; // ?
+let d = b++; // ?</code></pre><p id="6568f252-c4e2-4e24-b306-821b069401ea" class="">→ c = 2; d = 1</p><p id="9b40939f-6f89-4c03-a0c4-8caee8e643ed" class=""><strong>Assignment result</strong></p><p id="cf6a0173-d8fa-4759-a159-6fbf34d11b88" class="">What are the values of <code>a</code> and <code>x</code> after the code below?</p><pre id="21a427dd-2c7f-42ec-9d8c-e5a555a6a797" class="code"><code>let a = 2;
+
+let x = 1 + (a *= 2);</code></pre><p id="5982a17a-dabb-44e3-9877-f0fb5f0290b3" class="">→ x = 5</p><p id="94746ea0-4b47-4f46-b31e-1ca166c288d8" class=""><strong>Type conversions</strong></p><p id="3bb405b3-8235-4a68-ab31-aa81071429b5" class="">What are results of these expressions?</p><pre id="0c11b867-7766-4055-9457-6bbb873d4366" class="code"><code>&quot;&quot; + 1 + 0 // &quot;10&quot;
+&quot;&quot; - 1 + 0 // -1
+true + false // 1
+6 / &quot;3&quot; // 2
+&quot;2&quot; * &quot;3&quot; // 6
+4 + 5 + &quot;px&quot; //&quot;9px&quot;
+&quot;$&quot; + 4 + 5 // &quot;$45&quot;
+&quot;4&quot; - 2 // 2
+&quot;4px&quot; - 2 // NaN
+&quot;  -9  &quot; + 5 // &quot; -9 5&quot;
+&quot;  -9  &quot; - 5 // -14
+null + 1 // 1
+undefined + 1 // NaN
+&quot; \t \n&quot; - 2 // -2</code></pre><p id="b625a0a3-f6dd-4a47-a889-536c45a1f998" class=""><strong>Fix the addition</strong></p><p id="866fc058-96f5-40d6-b95e-28819a68e096" class="">Here’s a code that asks the user for two numbers and shows their sum.</p><p id="45cd1aaa-5e79-4d66-8426-25cc41f70ed0" class="">It works incorrectly. The output in the example below is <code>12</code> (for default prompt values).</p><p id="913fa265-2c7a-4ddd-939e-a5d140a77421" class="">Why? Fix it. The result should be <code>3</code>.</p><pre id="d50757b7-3b46-4c78-9023-381a50a3df5a" class="code"><code>let a = prompt(&quot;First number?&quot;, 1);
+let b = prompt(&quot;Second number?&quot;, 2);
+
+alert(a + b); // 12</code></pre><p id="5b3ed5e5-a779-443f-a8cc-468b4db5458d" class="">Answer:</p><p id="59899eb1-aa55-4110-b849-ef63ea74eaae" class="">Do a,b đang là kiểu string( kí tự nhập vào từ bàn phím) → cần ép kiểu về numeric</p><p id="922985ff-ad83-4299-a320-8ce250838dc3" class="">sửa:</p><pre id="fba48942-f309-4e13-932a-667cf411a26e" class="code"><code>let a = prompt(&quot;First number?&quot;, 1);
+let b = prompt(&quot;Second number?&quot;, 2);
+
+alert(+a + +b); // 12</code></pre><p id="adb4d600-b56a-4c3d-9a37-3d6f49c14e06" class="">
+</p><h2 id="85355943-d0df-4e61-b806-c5685b231645" class=""><mark class="highlight-red"><strong><strong>Comparisons</strong></strong></mark></h2><hr id="c3b9a40b-46d1-40c3-887d-d1d6fc1be03b"/><p id="a245021d-dbd2-4e19-be29-a0b9fbc2d334" class="">toán tử so sánh là một loại toán tử dùng để so sánh hai giá trị và trả về một giá trị true hoặc false</p><ul id="319acd89-621f-4b5e-af7f-ea91be9b2848" class="bulleted-list"><li style="list-style-type:disc">Lớn, bé hơn: <code>a &gt; b</code>, <code>a &lt; b</code>.</li></ul><ul id="4d689902-51df-4633-8d52-1d517f08b4a0" class="bulleted-list"><li style="list-style-type:disc">Lớn hơn, bé hơn hoặc bằng: <code>a &gt;= b</code>, <code>a &lt;= b</code>.</li></ul><ul id="8e806ca6-181c-4b62-bd30-0d19d0a9cc7a" class="bulleted-list"><li style="list-style-type:disc">Bằng nhau ( so sánh): <code>a == b</code></li></ul><ul id="fb7dee33-84f9-4f63-ae29-43b31017a244" class="bulleted-list"><li style="list-style-type:disc">Khác nhau:  <code>a != b</code>.</li></ul><pre id="f6b53355-f7f7-4db5-a956-76f76e208a7d" class="code"><code>alert( 2 &gt; 1 );  // true (correct)
+alert( 2 == 1 ); // false (wrong)
+alert( 2 != 1 ); // true (correct)</code></pre><p id="8dbaa060-854c-4bf3-aad2-671bb0654f71" class="">có thể gán giá trị logic cho biến</p><pre id="a75cdfe6-fae3-42f8-b257-4cfdd6b937d9" class="code"><code>let result = 5 &gt; 4; // gan ket qua cua phep so sanh
+alert( result ); // true</code></pre><h3 id="96795b8a-11cb-4e1c-88cb-124b69c9d069" class=""><strong>String comparison</strong></h3><p id="34f8abca-f608-42f7-a8cb-2230821a507d" class="">quá trình so sánh hai chuỗi và trả về một giá trị true hoặc false.</p><pre id="a303ed0c-225c-4edd-a1e3-a8655a9b4a6f" class="code"><code>alert(&quot;hello&quot; == &quot;hello&quot;);  // true
+alert(&quot;hello&quot; == &quot;Hello&quot;);  // false</code></pre><p id="fd282eb0-5a3b-42b1-a23f-0cd76c0569ef" class="">Thuật toán: so sánh từng kí tự của hai chuỗi với nhau từ trái qua phải, nếu kí tự nào lớn hơn thì chuỗi lớn hơn. Nếu so sánh hết chiều dài chuỗi vẫn bằng nhau thì 2 chuỗi bằng nhau. Chuỗi nào có dài hơn thì lớn hơn</p><pre id="4ac11baa-36ab-438d-89b2-89e2f5d652b0" class="code"><code>alert(&#x27;abed&#x27; &gt; &#x27;abc&#x27;); //true
+//ưu tiên về so sanh tung cap ki tu truoc hon</code></pre><p id="68fb50ff-7c24-494d-8d41-faea6517b655" class="">
+</p><h3 id="2b5f3f38-0a39-407f-8b8f-0681957d5853" class=""><strong>Comparison of different types</strong></h3><p id="6d77edfd-66d7-4079-8a55-cfe41e7acf3f" class="">khi so sánh hai giá trị có kiểu dữ liệu khác nhau, một số quy tắc chuyển đổi kiểu dữ liệu được áp dụng để cho phép so sánh</p><ul id="efacdfd7-4fdc-4081-bd8f-95825c85aca9" class="bulleted-list"><li style="list-style-type:disc">Nếu một trong hai giá trị là một số, thì giá trị còn lại sẽ được ép về số trước khi so sánh.</li></ul><pre id="7ac005d4-88e6-432e-924d-a6748e6da138" class="code"><code>alert(&quot;5&quot; == 5);  // true</code></pre><ul id="79fb7416-a80a-4346-aff3-4f77af85b81f" class="bulleted-list"><li style="list-style-type:disc">Nếu một trong hai giá trị là một boolean, thì giá trị còn lại sẽ được ép về boolean trước khi so sánh</li></ul><pre id="4074d0da-4a54-474a-9868-4a413be42f19" class="code"><code>alert(5 == true);  // true</code></pre><ul id="09a8450c-ec40-4609-8fee-891bb3da47f1" class="bulleted-list"><li style="list-style-type:disc">Nếu một trong hai giá trị là một chuỗi, thì giá trị còn lại sẽ được ép về chuỗi trước khi so sánh</li></ul><pre id="deb22520-5a27-4045-bdd1-bf1f7f040f65" class="code"><code>alert(5 == &quot;5&quot;); //true</code></pre><ul id="47b0f5c4-de5d-4415-89da-c99d174893cd" class="bulleted-list"><li style="list-style-type:disc">Nếu một trong hai giá trị là một đối tượng, thì giá trị còn lại sẽ được ép về đối tượng trước khi so sánh (nếu không sẽ trả về false)</li></ul><h3 id="c72f1fed-9ace-40e4-aabd-879757e88626" class=""><strong>Strict equality (===)</strong></h3><p id="7336d57c-ee35-4e21-a712-afa16b3aacdc" class="">một loại so sánh giống như equality (==), nhưng nó so sánh giá trị và kiểu dữ liệu của hai biến. Nếu giá trị và kiểu dữ liệu của hai biến khớp nhau, nó sẽ trả về true, ngược lại sẽ trả về false.</p><pre id="777045ce-1e77-457f-b37c-7fb5c2ef91d5" class="code"><code>let x = 5;
+let y = &quot;5&quot;;
+alert(x === y);  // false</code></pre><h3 id="8845ca49-b426-4dfe-a727-23a6bd826671" class=""><strong><a href="https://javascript.info/comparison#comparison-with-null-and-undefined">Comparison with null and undefined</a></strong></h3><p id="4b027d6a-9767-425d-a0f1-c4286945767c" class="">
+</p><h3 id="24861b71-83b2-4aa1-81ef-d800a7c58d66" class="">Tasks</h3><p id="8f055900-3f8a-498d-bc87-8f876713eecf" class=""><strong><strong>Comparisons</strong></strong></p><p id="36340fe6-e862-4a8c-8390-45445ee9518b" class="">What will be the result for these expressions?</p><pre id="2a6a08ac-bdb2-4d90-bfd1-541875cc3643" class="code"><code>5 &gt; 4 //true
+&quot;apple&quot; &gt; &quot;pineapple&quot; //false
+&quot;2&quot; &gt; &quot;12&quot; // true
+undefined == null //true
+undefined === null //false
+null == &quot;\n0\n&quot; //false do null chi == voi underfined
+null === +&quot;\n0\n&quot; //false</code></pre><p id="ab0a8cda-37bb-47a3-a95d-c87286ecdfee" class="">
+</p><h2 id="44689712-a662-4304-ba08-19706008b2a1" class=""><mark class="highlight-red"><strong><strong>Conditional branching: if, &#x27;?&#x27;</strong></strong></mark></h2><hr id="62c2942d-efbc-4c82-aad2-b9ff63ca20b7"/><h3 id="3a2d67f9-1540-4829-8811-e882d38c3eed" class=""><strong>The “if” statement</strong></h3><pre id="51b0b96e-db62-4413-99d8-d7c1dc421a77" class="code"><code>let name = prompt(&#x27;Đoán xem tôi tên gì?&#x27;,&#x27;Ten cua toi la&#x27;);
+if (name == &quot;hai&quot;) alert(&quot;Bạn là nhà tiên tri à?&quot;);</code></pre><p id="de44da07-81de-4123-9361-2d769ddb0af3" class="">Có thể dùng <code>{...}</code> để thực hiện nhiều hành động</p><pre id="0b4e3ac2-8762-4f5e-b215-ee5966382164" class="code"><code>let name = prompt(&#x27;Đoán xem tôi tên gì?&#x27;,&#x27;Ten cua toi la&#x27;);
+if (name == &quot;hai&quot;)
+{
+	alert(&quot;How??&quot;);
+	alert(&quot;Bạn là nhà tiên tri à?&quot;);
+}</code></pre><p id="8d0efdd3-ded3-4df6-af7f-55082d1d056c" class="">
+</p><h3 id="72d3694a-5dc6-44a2-894c-19c54dfa373d" class="">Boolean conversion</h3><p id="e4b5cb80-aa23-4eb7-bb76-4f404e300f54" class="">Điều kiện luôn đúng - luôn thực thi</p><pre id="1d359c92-f76a-4bbd-87ef-719955b9b08a" class="code"><code>if(1)
+{
+	...
+}</code></pre><p id="d142f05d-5589-4d79-8e23-b5a28d9fd54b" class="">Điều kiện luôn sai - không thực thi</p><pre id="1e3510e8-8ef3-4c3e-a48f-3f10c0c8e23e" class="code"><code>if(0)
+{
+	...
+}</code></pre><p id="9a01f9a1-f8c7-4481-8845-f02f98a0cf3f" class="">Hoặc có thể điều kiện là 1 biểu thức </p><pre id="b2f4e78e-d362-4e29-af40-79eb3cfd9235" class="code"><code>if(5&gt;3) // true
+{
+	...
+}</code></pre><h3 id="80cf14b1-2414-4e09-bdb8-a7ffe240a8e3" class="">The “else” clause</h3><pre id="229815ff-4f88-4c57-b185-fa23aa86afb2" class="code"><code>let name = prompt(&#x27;Đoán xem tôi tên gì?&#x27;,&#x27;Ten cua toi la&#x27;);
+if (name == &quot;hai&quot;)
+{
+	alert(&quot;How??&quot;);
+	alert(&quot;Bạn là nhà tiên tri à?&quot;);
+}
+else
+{
+	alert(&quot;Heheh, you&#x27;re normal&quot;);
+}</code></pre><h3 id="794c5e52-989c-4443-8a92-83b7dcc8cc19" class="">Several conditions: “else if”</h3><pre id="6c22f305-580c-4154-8861-d2edca739a8b" class="code"><code>let name = prompt(&#x27;Đoán xem tôi tên gì?&#x27;,&#x27;Ten cua toi la&#x27;);
+if (name == &quot;hai&quot;)
+{
+	alert(&quot;How??&quot;);
+	alert(&quot;Bạn là nhà tiên tri à?&quot;);
+}
+else if (name == &quot;Hai&quot;
+{
+	alert(&quot;Bạn là nhà tiên tri à?&quot;);
+}</code></pre><h3 id="d33c9121-ccb7-4d09-bdee-b194ee229914" class="">Conditional operator ‘?’</h3><p id="5c56d7a9-cb14-4cc3-95b0-dfa11818dbc7" class="">một cách ngắn gọn để viết một câu điều kiện. Cú pháp:</p><pre id="a77a5cc4-52b7-4295-a8b2-efb544650284" class="code"><code>condition ? value1 : value2</code></pre><p id="094fc951-ad99-47cc-ab4b-4eb89402961c" class="">Nếu điều kiện condition là true, toán tử sẽ trả về giá trị value1, ngược lại nó sẽ trả về giá trị value2.</p><pre id="9fddede6-df05-4f20-862e-f1eeccfe5b20" class="code"><code>let age = 25;
+let message = (age &gt;= 18) ? &quot;Welcome!&quot; : &quot;Sorry, you&#x27;re too young.&quot;;
+alert(message);  // &quot;Welcome!&quot;</code></pre><p id="800e3e3b-d5f4-4aee-98bf-4f62809e1848" class="">có thể sử dụng nhiều toán tử điều kiện &#x27;?&#x27; trong một câu lệnh để tạo ra một câu lệnh điều kiện đa cấp</p><pre id="77287d3e-9bb7-43f3-bdd4-10dbc114ef42" class="code"><code>let age = 25;
+let country = &quot;Vietnam&quot;;
+let message = (age &gt;= 18) ? (country === &quot;Vietnam&quot; ? &quot;Chào mừng đến Việt Nam!&quot; : &quot;Welcome!&quot;) : &quot;Sorry, you&#x27;re too young.&quot;;
+console.log(message);  // &quot;Chào mừng đến Việt Nam!&quot;</code></pre><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8ce8a6b8-881c-4a98-83d9-d7bb2bdfc982"><div style="font-size:1.5em"><span class="icon">💾</span></div><div style="width:100%">Recommend dùng if else để câu điều kiện dễ nhìn hơn; chỉ dùng toán tử ‘?’ trong câu ngắn</div></figure><h3 id="596ec15e-af6b-48b6-b6cd-c23597f9d041" class="">Tasks</h3><p id="e512bcae-5cc8-4bb2-8734-d6cefa1d7683" class="">Will <code>alert</code> be shown?</p><pre id="9243257d-352b-47c6-91ba-f8e3c0db6d9b" class="code"><code>if (&quot;0&quot;) {
+  alert( &#x27;Hello&#x27; );
+}</code></pre><p id="18c7ae69-ce13-426b-ac22-68c749d33a84" class="">→ No</p><p id="0d4cc37b-4d57-4870-8f9a-b24b1a12a3fd" class=""><strong>The name of JavaScript</strong></p><p id="97bcf0d1-a431-4a46-a847-82ef8a5dee9c" class="">Using the <code>if..else</code> construct, write the code which asks: ‘What is the “official” name of JavaScript?’</p><p id="ddfd28f2-45f8-414d-b8b8-70486dafd1a9" class="">If the visitor enters “ECMAScript”, then output “Right!”, otherwise – output: “You don’t know? ECMAScript!”</p><pre id="1224d63e-249d-4a4d-b9c8-b4c00089a7bc" class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+       let name = prompt(&#x27;What is the “official” name of JavaScript?&#x27;,&#x27;&#x27;);
+       if (name == “ECMAScript”)
+       {
+        alert(“Right!”);
+       }
+       else
+       {
+        alert(“You dont know? ECMAScript!”);
+       }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p id="d1003d89-7337-45c1-8456-c578025366d8" class=""><strong>Show the sign</strong></p><p id="da12afa9-7ab9-48d2-95af-5f1dfb343b69" class="">Using <code>if..else</code>, write the code which gets a number via <code>prompt</code> and then shows in <code>alert</code>:</p><ul id="514c88d4-4630-464b-acac-6939c0aab6a1" class="bulleted-list"><li style="list-style-type:disc"><code>1</code>, if the value is greater than zero,</li></ul><ul id="92987201-5f65-4f40-bc71-7798cb3827bd" class="bulleted-list"><li style="list-style-type:disc"><code>1</code>, if less than zero,</li></ul><ul id="e17de659-3ed6-4fa4-bb10-103658b64971" class="bulleted-list"><li style="list-style-type:disc"><code>0</code>, if equals zero.</li></ul><pre id="a7a7e691-5b35-4c82-b796-7076b51b92ef" class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        let number = prompt(&quot;Nhập vào 1 số&quot;,&quot; &quot;);
+        if(Number(number) &gt; 0)
+        {
+            alert(1);
+        }
+        else if(Number(number) &lt; 0){
+            alert(-1);
+        }
+        else
+        {
+            alert(0);
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p id="6e03a791-0a95-4298-9c81-223f65c5a68b" class=""><strong>Rewrite &#x27;if&#x27; into &#x27;?&#x27;</strong></p><p id="ed74b58f-df1a-455a-b13e-bfe37404154d" class="">Rewrite this <code>if</code> using the conditional operator <code>&#x27;?&#x27;</code>:</p><pre id="f9ad5187-84d2-4a1e-92c6-92099600bfe2" class="code"><code>let result;
+
+if (a + b &lt; 4) {
+  result = &#x27;Below&#x27;;
+} else {
+  result = &#x27;Over&#x27;;
+}</code></pre><pre id="413b3c3f-17c3-48b0-93cf-7e1b0f86da65" class="code"><code>let result = (a+b&lt;4) ? &quot;Below&quot; : &quot;Over&quot;</code></pre><p id="49256836-eccb-43c2-bee4-17467b513d11" class=""><strong>Rewrite &#x27;if..else&#x27; into &#x27;?&#x27;</strong></p><p id="3254c4e7-f7fb-41d2-b22d-ec25d43fe093" class="">Rewrite <code>if..else</code> using multiple ternary operators <code>&#x27;?&#x27;</code>.</p><p id="0966b5c8-f6d3-40e7-bda9-a2fdda89aecd" class="">For readability, it’s recommended to split the code into multiple lines.</p><pre id="2c460587-c6ec-403e-9f20-310c26a6cc12" class="code"><code>let message;
+
+if (login == &#x27;Employee&#x27;) {
+  message = &#x27;Hello&#x27;;
+} else if (login == &#x27;Director&#x27;) {
+  message = &#x27;Greetings&#x27;;
+} else if (login == &#x27;&#x27;) {
+  message = &#x27;No login&#x27;;
+} else {
+  message = &#x27;&#x27;;
+}</code></pre><pre id="04d898b5-a112-4688-8509-2f9fd36f6a4f" class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        let message = (login == &#x27;Employee&#x27;) ? &#x27;Hello&#x27; :
+        (
+            (login == &quot;Director&quot;) ? &#x27;Greetings&#x27; :
+            (
+                (login == &quot;&quot;) ? &#x27;No login&#x27; : &#x27;&#x27;
+            )        
+        )
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p id="0c49cd66-a5c8-4716-8beb-947649b40433" class="">
+</p><h2 id="de88fcf9-4192-436c-979a-45c0714e8dcc" class=""><mark class="highlight-red"><strong><strong>Logical operators</strong></strong></mark></h2><hr id="bab46152-c787-416d-84d6-d7f94cbb0e22"/><p id="ad0974a6-c5c0-41d6-83b8-a07cd923f00a" class="">Trong JavaScript, có 3 toán tử logic: AND (&amp;&amp;), OR (||), NOT (!).</p><ul id="6464dcaa-7ef9-4d41-96b4-7303c2450b37" class="bulleted-list"><li style="list-style-type:disc">AND (&amp;&amp;): Sẽ trả về true nếu cả hai toán hạng đều là true, ngược lại sẽ trả về false.</li></ul><ul id="32ac6306-e7f8-4cc3-9c5e-6125f25b93bb" class="bulleted-list"><li style="list-style-type:disc">OR (||): Sẽ trả về true nếu một trong hai toán hạng là true, ngược lại sẽ trả về false.</li></ul><ul id="bba16129-eb8e-48eb-b6eb-eb2611af3ba2" class="bulleted-list"><li style="list-style-type:disc">NOT (!): Sẽ đảo ngược giá trị logic của toán hạng.</li></ul><pre id="be7797d9-d0ec-47a7-ac1a-a822113ebe41" class="code"><code>alert(true &amp;&amp; true);   // true
+alert(true &amp;&amp; false);  // false
+alert(false &amp;&amp; false); // false
+
+alert(true || true);   // true
+alert(true || false);  // true
+alert(false || false); // false
+
+alert(!true);   // false
+alert(!false);  // true</code></pre><p id="717d11b3-6da1-41d5-8902-c5a128abe89d" class="">
+</p><h2 id="2a326c8d-15ca-4a32-96ca-b0a196e3abf8" class=""><mark class="highlight-red"><strong><strong>Nullish coalescing operator &#x27;??&#x27;</strong></strong></mark></h2><hr id="3d3b9fc4-2588-44c8-97cf-8ebd5ee058ea"/><p id="cfc4f736-a8b5-4cf9-956a-38c7a65c649e" class="">T<mark class="highlight-blue">oán tử nullish coalescing (??)</mark> cho phép xác định giá trị mặc định cho một biến hoặc thuộc tính nếu nó là <code>null</code> hoặc <code>undefined</code>. Toán tử này sẽ trả về giá trị bên trái nếu nó khác null hoặc undefined, ngược lại nó sẽ trả về giá trị bên phải.</p><pre id="ea3cba02-cc4f-4bea-b8ed-73331863d74a" class="code"><code>let a = null;
+let b = undefined;
+let c = &quot;Hello&quot;;
+
+alert(a ?? &quot;default value&quot;);  // &quot;default value&quot;
+alert(b ?? &quot;default value&quot;);  // &quot;default value&quot;
+alert(c ?? &quot;default value&quot;);  // &quot;Hello&quot;
+</code></pre><p id="5c59a7c8-9b9d-41d0-a2f4-e74ae6f834d3" class="">
+</p><h2 id="4223528c-2705-423a-87ee-4130a9f77ca0" class=""><mark class="highlight-red"><strong><strong>Loops: while and for</strong></strong></mark></h2><hr id="0233c40f-3d41-4ac7-bad8-c04484773db1"/><ul id="251d6102-5e6a-48fd-8b68-c982a62e017b" class="bulleted-list"><li style="list-style-type:disc">Vòng lặp while: Sẽ lặp lại một block code cho đến khi điều kiện trong ngoặc tròn () là true.</li></ul><pre id="2b0c8da6-648f-4fef-81bd-fc2d543d2f0f" class="code"><code>let i = 0;
+while (i &lt; 5) {
+  alert(i);
+  i++;
+}</code></pre><ul id="3cdfa43f-2bfe-49ec-ab57-0538c9bbcc06" class="bulleted-list"><li style="list-style-type:disc">Vòng lặp for: Sẽ lặp lại một block code cho đến khi điều kiện trong ngoặc tròn () là false. Trong vòng lặp for có 3 phần chính: khởi tạo, điều kiện và sự tăng giảm của biến đếm.</li></ul><pre id="a3569a1c-04aa-4df2-9ff9-bc9665b71f82" class="code"><code>for (let i = 0; i &lt; 5; i++) {
+	 alert(i);
+}</code></pre><p id="34cfa67e-6281-48a4-af0d-1645c376957d" class="">Cả hai vòng lặp while và for có thể dùng với các hàm break và continue để dừng hoặc bỏ qua một vòng lặp nào đó.</p><ul id="5a8f317b-23a7-486f-a485-2959b97ed4cb" class="bulleted-list"><li style="list-style-type:disc">sử dụng hàm <code><strong>break</strong></code> để dừng vòng lặp ngay lập tức, khi gặp điều kiện nào đó trong vòng lặp</li></ul><pre id="1b5c49fb-f7d2-4f0c-b332-dc89b4afd42a" class="code"><code>for (let i = 0; i &lt; 10; i++) {
+  if (i === 5) {
+    break; //vòng lặp sẽ dừng lại sau khi in ra số 5
+  }
+  alert(i);
+}</code></pre><ul id="60604eba-2c74-42f2-955b-c1668db62935" class="bulleted-list"><li style="list-style-type:disc">hàm <code><strong>continue</strong></code> sẽ bỏ qua lần lặp hiện tại và tiếp tục vòng lặp kế tiếp</li></ul><pre id="99d24c2e-4530-4696-a733-79d6a7902276" class="code"><code>for (let i = 0; i &lt; 10; i++) {
+  if (i % 2 === 0) {
+    continue; //vòng lặp sẽ in ra các số lẻ từ 0 đến 9, bỏ qua số chẵn
+  }
+  console.log(i);
+}</code></pre><p id="a7a11e3b-e85b-445c-99ef-b7cf9e347536" class="">
+</p><h2 id="c9c5aebb-e797-4094-9569-eae2a7a1dd58" class=""><mark class="highlight-red"><strong><strong>The &quot;switch&quot; statement</strong></strong></mark></h2><hr id="e0ca4128-053e-4700-a63c-9e4461804344"/><p id="e43e9272-f495-4d97-89e2-9fa243c7e457" class="">switch statement cho phép bạn so sánh một biến hoặc giá trị với nhiều giá trị khác nhau và thực hiện một block code tương ứng</p><pre id="44ceaaf5-5dd0-4578-b208-41e89fcabca2" class="code"><code>switch (expression) {
+  case value1:
+    // code to be executed if expression === value1
+    break;
+  case value2:
+    // code to be executed if expression === value2
+    break;
+  ...
+  default:
+    // code to be executed if expression is not matched with any case
+}</code></pre><p id="2d3a1b90-beba-4677-b559-6e2d36b389dd" class="">E.g</p><pre id="8e97295b-8b77-4402-b4f7-fb1ea8dd707d" class="code"><code>let day = &quot;Monday&quot;;
+switch (day) {
+  case &quot;Monday&quot;:
+    alert(&quot;Today is Monday&quot;);
+    break;
+  case &quot;Tuesday&quot;:
+    alert(&quot;Today is Tuesday&quot;);
+    break;
+  case &quot;Wednesday&quot;:
+    alert(&quot;Today is Wednesday&quot;);
+    break;
+  default:
+    alert(&quot;Today is another day&quot;);
+}
+//giá trị của biến &quot;day&quot; là &quot;Monday&quot;, nên sẽ in ra &quot;Today is Monday&quot;.</code></pre><p id="cb4f6aa3-cda9-4f0d-ae74-b4a98d47d1f4" class="">Cần sử dụng <code><strong>break</strong></code> để dừng vòng lặp sau khi thực hiện block code tương ứng, nếu không sẽ tiếp tục chạy các block code tiếp theo cho đến khi gặp break hoặc kết thúc switch.</p><p id="84b01dc3-6474-4300-9765-78973ae87f44" class="">Trong một số trường hợp nếu muốn thực hiện nhiều lệnh cho nhiều giá trị giống nhau có thể sử dụng <code><strong>fall-through</strong></code></p><pre id="f972b3d6-f722-4087-9007-d25adbaa6534" class="code"><code>let x = 2;
+switch (x) {
+  case 2:
+  case 3:
+    alert(&quot;x is 2 or 3&quot;);
+    break;
+  default:
+    alert(&quot;x is something else&quot;);
+}</code></pre><p id="743436fc-b3e0-482d-b337-63dc6d2904db" class="">
+</p><h2 id="27161cc0-e3a8-47dc-aada-52fc1c716085" class=""><mark class="highlight-red"><strong><strong>Functions</strong></strong></mark></h2><hr id="8258caa2-991c-403a-9718-669aacf51689"/><p id="411e9e07-22e8-4828-b7dd-e3bd59c48382" class="">Function Declaration là cách viết hàm trong JavaScript mà không cần gán hàm vào một biến. Hàm này có thể được gọi trước khi được khai báo trong code.</p><pre id="9a242f6a-35a6-414f-b2a8-312db70aa2b4" class="code"><code>function functionName(parameter1, parameter2, ...) {
+  // code to be executed
+}</code></pre><pre id="5a68f5be-c1de-41c4-8882-eba8651ff47e" class="code"><code>greeting(&quot;Hai&quot;); // In ra &quot;Hello Hai&quot;
+
+function xinchao(name) {
+  alert(&quot;Hello &quot; + name);
+}</code></pre><p id="6178e88c-818d-4e35-8c9a-44e6b14e9a2c" class="">
+</p><p id="5fd22503-972c-4dc4-85e2-614efb4ae07c" class="">Biến được khai báo trong một hàm là một biến cục bộ (local variable). Biến này chỉ có thể được truy cập và sử dụng trong hàm đó và không thể truy cập từ bên ngoài hàm.</p><pre id="9bf467cf-4b09-4f07-a98d-bac5b7db6cb2" class="code"><code>function myFunction() {
+  let myLocalVariable = &quot;Hello&quot;;
+  // code to be executed
+}</code></pre><pre id="23dd0be1-2400-4782-aee0-c4968028feac" class="code"><code>function xinchao(name) {
+  let message = &quot;Hello &quot; + name;
+  alert(message);
+}
+xinchao(&quot;Hai&quot;); // In ra &quot;Hello Hai&quot;
+alert(message); // lỗi: message chưa được khai báo</code></pre></div></article></body></html>
